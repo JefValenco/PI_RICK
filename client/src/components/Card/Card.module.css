@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap");
+
+.containerm {
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: grayscale(100%);
+}
+
+.imager {
+  overflow: hidden;
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+
+  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+  background-color: #555;
+}
+
+.imager:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-140%, -50%);
+  background-color: #212121;
+  opacity: 0.8;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+.imager:hover:after {
+  transform: translate(-50%, -50%);
+}
+
+.imager:hover img {
+  transform: translate(-50%, -50%) scale(1.3) rotate(20deg);
+}
+
+.imager2 {
+  position: absolute;
+  height: 110%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.8s;
+}
+
+.h2 {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-2000px, -50%);
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  display: block;
+  color: #ffffff;
+  padding: 5px;
+  transition: 0.8s;
+  transition-timing-function: ease-in;
+}
+
+.imager:hover .h2 {
+  transform: translate(-50%, -50%);
+  transition-timing-function: ease;
+}
+
+.p {
+  position: absolute;
+
+  z-index: 2;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-2000px, -50%);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  display: block;
+  color: #ffffff;
+  padding: 5px;
+  transition: 0.8s;
+  transition-timing-function: ease-in;
+}
+
+.imager:hover .p {
+  transform: translate(-50%, -50%);
+  transition-timing-function: ease;
+}
+
+.imageSuspect {
+  position: absolute;
+  bottom: 0em;
+  right: 0em;
+  z-index: 1;
+  max-width: 300px;
+  max-height: auto;
+
+  object-fit: cover;
+  box-shadow: none;
+  border-radius: 0px;
+}

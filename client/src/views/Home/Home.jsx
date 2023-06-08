@@ -76,7 +76,7 @@ const Home = () => {
 
       dispatch(FilterBySpecie(e.target.value));
 
-      setIsLoading2(false); // Hide loader
+      setIsLoading2(false);
     }, 500);
   }
 

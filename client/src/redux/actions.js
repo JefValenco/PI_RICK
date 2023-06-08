@@ -14,7 +14,7 @@ export const FILTER_BY_CREATED = "FILTER_BY_CREATED";
 export function getCharacters() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3006/rickandmorthy`);
+      const response = await axios.get(`/rickandmorthy`);
 
       console.log("Response data:", response.data);
       dispatch({ type: GET_CHARACTERS, payload: response.data });
@@ -27,7 +27,7 @@ export function getCharacters() {
 export function getSpecie() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3006/specie`);
+      const response = await axios.get(`/specie`);
 
       console.log("Response data:", response.data);
       dispatch({ type: GET_SPECIE, payload: response.data });
@@ -40,7 +40,7 @@ export function getSpecie() {
 export function getDeleteCharacters() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3006/rickandmorthy`);
+      const response = await axios.get(`/rickandmorthy`);
       const createdCharacters = response.data.filter(
         (getDeleteCharacters) => getDeleteCharacters.create
       );
@@ -54,7 +54,7 @@ export function getDeleteCharacters() {
 export function getModifyCharacters() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`http://localhost:3006/rickandmorthy`);
+      const response = await axios.get(`/rickandmorthy`);
       const createdCharacters = response.data.filter(
         (getDeleteCharacters) => getDeleteCharacters.create
       );
@@ -68,9 +68,7 @@ export function getModifyCharacters() {
 export function getItemById(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(
-        `http://localhost:3006/rickandmorthy/${id}`
-      );
+      const response = await axios.get(`/rickandmorthy/${id}`);
       dispatch({ type: GET_ITEM_BY_ID, payload: response.data });
     } catch (error) {
       dispatch({ type: GET_ITEM_BY_ID, payload: null });
@@ -81,9 +79,7 @@ export function getItemById(id) {
 export function getItemByName(payload) {
   return async function (dispatch) {
     try {
-      let response = await axios.get(
-        `http://localhost:3006/rickandmorthy?name=` + payload
-      );
+      let response = await axios.get(`/rickandmorthy?name=` + payload);
       return dispatch({
         type: GET_ITEM_BY_NAME,
         payload: response.data,

@@ -129,7 +129,7 @@ const Form = () => {
 
     // Send form data to server
     axios
-      .post("http://localhost:3006/rickandmorthy", form)
+      .post("/rickandmorthy", form)
       .then((res) => {
         alert("Character created!");
         resetForm();
@@ -141,7 +141,7 @@ const Form = () => {
   const submitHandlerDelete = (event) => {
     event.preventDefault();
     axios
-      .delete(`http://localhost:3006/rickandmorthy?name=${formDelete.name}`)
+      .delete(`/rickandmorthy?name=${formDelete.name}`)
       .then((res) => {
         alert("Character deleted!");
         resetFormDelete();

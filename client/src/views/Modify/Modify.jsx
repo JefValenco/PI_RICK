@@ -111,7 +111,7 @@ const Modify = () => {
 
     // Send formModify data to server
     axios
-      .put("http://localhost:3006/rickandmorthy", formModify)
+      .put("/rickandmorthy", formModify)
       .then((res) => {
         alert("Character updated!");
         resetFormModify();
